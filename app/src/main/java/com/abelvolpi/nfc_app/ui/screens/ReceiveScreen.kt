@@ -9,14 +9,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun ProvideScreen() {
+fun ReceiveScreen() {
     Box(modifier = Modifier.fillMaxSize()) {
-        Text(text = "ProvideScreen", modifier = Modifier.align(Alignment.Center))
+        Text(text = "ReceiveScreen", modifier = Modifier.align(Alignment.Center))
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun ProvideScreenPreview() {
-    ProvideScreen()
+fun ReceiveScreenPreview() {
+    ReceiveScreen()
 }
