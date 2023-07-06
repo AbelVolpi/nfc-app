@@ -24,19 +24,35 @@ class MainActivity : ComponentActivity() {
             NFC_AppTheme {
                 val navController = rememberNavController()
                 NavHost(navController = navController, startDestination = "home") {
-                    composable("home",
-                        exitTransition = { slideOutHorizontally(targetOffsetX = { -it }, animationSpec = tween(
-                            durationMillis = 200,
-                            easing = LinearEasing
-                        )) },
-                        popEnterTransition = { slideInHorizontally(initialOffsetX = { -it }, animationSpec = tween(
-                            durationMillis = 200,
-                            easing = LinearEasing
-                        )) },
-                        popExitTransition = { slideOutHorizontally(targetOffsetX = { it }, animationSpec = tween(
-                            durationMillis = 200,
-                            easing = LinearEasing
-                        )) }
+                    composable(
+                        "home",
+                        exitTransition = {
+                            slideOutHorizontally(
+                                targetOffsetX = { -it },
+                                animationSpec = tween(
+                                    durationMillis = 200,
+                                    easing = LinearEasing
+                                )
+                            )
+                        },
+                        popEnterTransition = {
+                            slideInHorizontally(
+                                initialOffsetX = { -it },
+                                animationSpec = tween(
+                                    durationMillis = 200,
+                                    easing = LinearEasing
+                                )
+                            )
+                        },
+                        popExitTransition = {
+                            slideOutHorizontally(
+                                targetOffsetX = { it },
+                                animationSpec = tween(
+                                    durationMillis = 200,
+                                    easing = LinearEasing
+                                )
+                            )
+                        }
                     ) {
                         HomeScreen(
                             onNavigateToProvide = {
@@ -46,22 +62,42 @@ class MainActivity : ComponentActivity() {
                     }
                     composable(
                         "provide",
-                        enterTransition = { slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(
-                            durationMillis = 200,
-                            easing = LinearEasing
-                        )) },
-                        exitTransition = { slideOutHorizontally(targetOffsetX = { it }, animationSpec = tween(
-                            durationMillis = 200,
-                            easing = LinearEasing
-                        )) },
-                        popEnterTransition = { slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(
-                            durationMillis = 200,
-                            easing = LinearEasing
-                        )) },
-                        popExitTransition = { slideOutHorizontally(targetOffsetX = { it }, animationSpec = tween(
-                            durationMillis = 200,
-                            easing = LinearEasing
-                        )) }
+                        enterTransition = {
+                            slideInHorizontally(
+                                initialOffsetX = { it },
+                                animationSpec = tween(
+                                    durationMillis = 200,
+                                    easing = LinearEasing
+                                )
+                            )
+                        },
+                        exitTransition = {
+                            slideOutHorizontally(
+                                targetOffsetX = { it },
+                                animationSpec = tween(
+                                    durationMillis = 200,
+                                    easing = LinearEasing
+                                )
+                            )
+                        },
+                        popEnterTransition = {
+                            slideInHorizontally(
+                                initialOffsetX = { it },
+                                animationSpec = tween(
+                                    durationMillis = 200,
+                                    easing = LinearEasing
+                                )
+                            )
+                        },
+                        popExitTransition = {
+                            slideOutHorizontally(
+                                targetOffsetX = { it },
+                                animationSpec = tween(
+                                    durationMillis = 200,
+                                    easing = LinearEasing
+                                )
+                            )
+                        }
                     ) {
                         ProvideScreen()
                     }
