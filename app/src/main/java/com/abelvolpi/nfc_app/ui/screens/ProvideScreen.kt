@@ -34,7 +34,7 @@ fun ProvideScreen() {
                 .fillMaxWidth()
                 .padding(top = 80.dp, start = 40.dp, end = 40.dp)
         ) {
-            Box(modifier = Modifier.align(Alignment.CenterHorizontally)){
+            Box(modifier = Modifier.align(Alignment.CenterHorizontally)) {
                 ProfileImage()
             }
             Text(
@@ -105,10 +105,9 @@ fun ProfileImage() {
                 }
             }
             .padding(borderWidth)
-            .clip(CircleShape),
+            .clip(CircleShape)
 
     )
-
 }
 
 @Preview(showBackground = true)

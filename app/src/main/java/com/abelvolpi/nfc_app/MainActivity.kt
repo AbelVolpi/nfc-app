@@ -50,15 +50,15 @@ class MainActivity : ComponentActivity() {
                             durationMillis = 200,
                             easing = LinearEasing
                         )) },
-                        exitTransition = { slideOutHorizontally(targetOffsetX = {  it }, animationSpec = tween(
+                        exitTransition = { slideOutHorizontally(targetOffsetX = { it }, animationSpec = tween(
                             durationMillis = 200,
                             easing = LinearEasing
                         )) },
-                        popEnterTransition = { slideInHorizontally(initialOffsetX = {  it }, animationSpec = tween(
+                        popEnterTransition = { slideInHorizontally(initialOffsetX = { it }, animationSpec = tween(
                             durationMillis = 200,
                             easing = LinearEasing
                         )) },
-                        popExitTransition = { slideOutHorizontally(targetOffsetX = {it }, animationSpec = tween(
+                        popExitTransition = { slideOutHorizontally(targetOffsetX = { it }, animationSpec = tween(
                             durationMillis = 200,
                             easing = LinearEasing
                         )) }
