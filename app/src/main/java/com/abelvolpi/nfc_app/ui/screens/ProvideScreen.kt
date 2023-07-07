@@ -57,12 +57,6 @@ fun ProvideScreen() {
 
         Button(
             onClick = { /*TODO*/ },
-            contentPadding = PaddingValues(
-                start = 20.dp,
-                top = 12.dp,
-                end = 20.dp,
-                bottom = 12.dp
-            ),
             shape = RoundedCornerShape(10.dp), colors = ButtonDefaults.buttonColors(backgroundColor = Color.DarkGray),
             modifier = Modifier
                 .align(Alignment.BottomCenter)
@@ -75,7 +69,7 @@ fun ProvideScreen() {
         ) {
             Text(
                 text = "Provide",
-                fontSize = 20.sp,
+                fontSize = 16.sp,
                 color = Color.White,
                 fontFamily = FontFamily(Font(R.font.robotoflex_regular))
             )
