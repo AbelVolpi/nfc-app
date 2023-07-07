@@ -57,6 +57,9 @@ class MainActivity : ComponentActivity() {
                         HomeScreen(
                             onNavigateToProvide = {
                                 navController.navigate("provide")
+                            },
+                            onNavigateToReceive = {
+                                navController.navigate("receive")
                             }
                         )
                     }

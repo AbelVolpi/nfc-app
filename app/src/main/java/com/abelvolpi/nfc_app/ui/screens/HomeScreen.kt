@@ -32,7 +32,8 @@ import com.abelvolpi.nfc_app.ui.models.Card
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun HomeScreen(
-    onNavigateToProvide: () -> Unit
+    onNavigateToProvide: () -> Unit,
+    onNavigateToReceive: () -> Unit
 ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -55,18 +56,16 @@ fun HomeScreen(
     ) {
         CardsColumn(
             listOf(
-                Card("Provide", R.drawable.img1),
-                Card("Receive", R.drawable.img2)
-            ),
-            onNavigateToProvide
+                Card("Provide", R.drawable.img1, onNavigateToProvide),
+                Card("Receive", R.drawable.img2, onNavigateToReceive)
+            )
         )
     }
 }
 
 @Composable
 fun CardsColumn(
-    cards: List<Card>,
-    onNavigateToProvide: () -> Unit
+    cards: List<Card>
 ) {
     Column(
         modifier = Modifier
@@ -75,15 +74,14 @@ fun CardsColumn(
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         cards.forEach { card ->
-            CardRow(card, onNavigateToProvide)
+            CardRow(card)
         }
     }
 }
 
 @Composable
 fun CardRow(
-    card: Card,
-    onNavigateToProvide: () -> Unit
+    card: Card
 ) {
     Box(
         modifier = Modifier
@@ -91,7 +89,7 @@ fun CardRow(
             .height(180.dp)
             .clip(shape = RoundedCornerShape(15.dp))
             .background(color = Color.DarkGray)
-            .clickable(onClick = onNavigateToProvide)
+            .clickable(onClick = card.action)
     ) {
         Image(
             modifier = Modifier
