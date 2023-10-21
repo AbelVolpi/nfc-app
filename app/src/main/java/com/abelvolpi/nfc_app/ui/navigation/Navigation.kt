@@ -13,7 +13,10 @@ import com.abelvolpi.nfc_app.ui.screens.ProvideScreen
 import com.abelvolpi.nfc_app.ui.screens.ReceiveScreen
 
 @Composable
-fun NavigationSchema() {
+fun NavigationSchema(
+    startNFCReader: () -> Unit,
+    pauseNFCReader: () -> Unit
+) {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "home") {
         composable(
@@ -68,7 +71,7 @@ fun NavigationSchema() {
             },
             exitTransition = {
                 slideOutHorizontally(
-                    targetOffsetX = { - it },
+                    targetOffsetX = { -it },
                     animationSpec = tween(
                         durationMillis = 100,
                         easing = LinearEasing
@@ -77,7 +80,7 @@ fun NavigationSchema() {
             },
             popEnterTransition = {
                 slideInHorizontally(
-                    initialOffsetX = { - it },
+                    initialOffsetX = { -it },
                     animationSpec = tween(
                         durationMillis = 100,
                         easing = LinearEasing
@@ -133,7 +136,7 @@ fun NavigationSchema() {
                 )
             }
         ) {
-            ReceiveScreen()
+            ReceiveScreen(startNFCReader, pauseNFCReader)
         }
     }
 }
